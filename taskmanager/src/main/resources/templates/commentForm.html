@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>TaskManager</title>
+</head>
+
+<body>
+<h1>Add a comment to the task</h1>
+<form id = "commentForm"
+      th:action="@{'/task/addComment/' + ${task.id}}"
+      method="POST">
+
+    <table>
+        <tr>
+            <td><label for="commentInput">Comment</label>
+            <td><input id=commentInput type="text" th:field="${commentForm.comment}" placeholder="NAME" required/></td>
+            <td th:if="${#fields.hasErrors('commentForm')}" th:errors="${CommentForm.comment}" th:style="'color:red'"></td>
+        </tr>
+        <tr>
+            <td><button type="submit">Create</button></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

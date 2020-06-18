@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>TaskManager</title>
+</head>
+
+<body>
+<h1>Project details</h1>
+    <table>
+        <tr>
+            <td>Project Name: </td>
+            <td th:text="${project.name}">PROJECT NAME</td>
+        </tr>
+        <tr>
+            <td>Project Description: </td>
+            <td th:text="${project.description}">PROJECT DESCRIPTION</td>
+        </tr>
+    </table>
+    <h2><a th:href="@{'/project/viewTasksForMembers/' + ${project.id}}">View Tasks</a></h2>
+    <h2><a th:href="@{/home}">Home</a></h2>
+</body>
+</html>

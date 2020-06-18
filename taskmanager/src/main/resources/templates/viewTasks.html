@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>TaskManager</title>
+</head>
+<body>
+<h1>Tasks del progetto</h1>
+	<div>
+		<ul>
+			<li th:each="task : ${tasks}">
+				<a href="task.html" 
+				   th:href="@{'/task' + '/' + ${task.id}}" 
+				   th:text="|${task.name} ${task.description}|">Progetto nome</a>
+			</li>
+		</ul>
+	</div>
+<h2><a href="/users/ownedProjects">My Projects</a></h2>
+</body>
+</html>

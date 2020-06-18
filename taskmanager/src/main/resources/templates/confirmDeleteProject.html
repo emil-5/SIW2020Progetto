@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>TaskManager</title>
+</head>
+<body>
+<h1>Dettagli progetto</h1>
+    <table>
+        <tr>
+            <td>Nome Progetto: </td>
+            <td th:text="${project.name}">NOME PROGETTO</td>
+        </tr>
+        <tr>
+            <td>Descrizione: </td>
+            <td th:text="${project.description}">DESCRIZIONE PROGETTO</td>
+        </tr>
+    </table>
+<h2>Are you sure you want to delete this project?</h2>
+<h3><a th:href="@{/users/ownedProjects}">My Projects</a></h3>
+<h4><a th:href="@{'/project/projectDeleteSuccessful/' + ${project.id}}" >Delete Project</a></h4>
+</body>
+</html>

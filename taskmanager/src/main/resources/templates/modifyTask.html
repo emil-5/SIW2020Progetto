@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>TaskManager</title>
+</head>
+
+<body>
+<h1>Modify your task</h1>
+<form id = "modifyTask"
+      th:action="@{'/task' + '/modifyTask/' + ${task.id}}"
+      method="POST">
+
+    <table>
+        <tr>
+            <td><label for="taskNameInput">Task Name</label>
+            <td><input id=taskNameInput type="text" th:field="${newtask.name}" placeholder="NAME" value = "${task.name}" required/></td>
+            <td th:if="${#fields.hasErrors('newtask.name')}" th:errors="${newtask.name}" th:style="'color:red'"></td>
+        </tr>
+        <tr>
+            <td><label for="descriptionInput">Description</label></td>
+            <td><input id="descriptionInput" type="text" th:field="${newtask.description}" value="${newtask.description}" placeholder="DESCRIPTION"/></td>
+            <td th:if="${#fields.hasErrors('newtask.description')}" th:errors="${newtask.description}" th:style="'color:red'"></td>
+        </tr>
+        <tr>
+	        <td>Check to complete the task<label th:if="${newtask.completed}"><input type="checkbox" id="scales" name="scales" value = "true" checked></label></td>
+	        <td><label th:unless="${newtask.completed}"><input type="checkbox" id="scales" name="scales"></label></td>
+	    </tr>
+        <tr>
+            <td><button type="submit">Confirm</button></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

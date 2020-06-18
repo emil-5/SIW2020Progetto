@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>TaskManager</title>
+</head>
+<body>
+<h1>User information</h1>
+    <table>
+        <tr>
+            <td>First name: </td>
+            <td th:text="${user.firstName}">FIRST NAME</td>
+        </tr>
+        <tr>
+            <td>Last name: </td>
+            <td th:text="${user.lastName}">LAST NAME</td>
+        </tr>
+    </table>
+<h2>Are you sure you want to delete this user?</h2>
+<h3><a th:href="@{/admin/viewAllUsersAdmin}">Return to all users</a></h3>
+<h4><a th:href="@{'/admin/userDeleteSuccessfulAdmin/' + ${user.id}}" >Delete user</a></h4>
+</body>
+</html>

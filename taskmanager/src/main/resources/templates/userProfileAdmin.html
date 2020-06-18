@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>TaskManager</title>
+</head>
+
+<body>
+<h1>User Profile</h1>
+    <table>
+        <tr>
+            <td>First Name</td>
+            <td th:text="${user.firstName}">...</td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td th:text="${user.lastName}">...</td>
+        </tr>
+        <tr>
+            <td>Registered at: </td>
+            <td th:text="${user.creationTimestamp}">...</td>
+        </tr>
+        <tr>
+            <td>Last Update at:</td>
+            <td th:text="${user.lastUpdateTimestamp}">...</td>
+        </tr>
+    </table>
+    <h1>Created Projects</h1>
+	<div>
+		<ul>
+			<li th:each="project : ${projects}">
+				<a href="projectForAdmin.html" 
+				   th:href="@{'/projectForAdmin' + '/' + ${project.id}}" 
+				   th:text="|${project.name} ${project.description}|">PROJECT</a>
+			</li>
+		</ul>
+	</div>
+    <h2><a th:href="@{'/admin/confirmDeleteUserAdmin/' + ${user.id}}">Delete This User</a></h2>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>TaskManager</title>
+</head>
+
+<body>
+<h1>Task details</h1>
+    <table>
+        <tr>
+            <td>Task name: </td>
+            <td th:text="${task.name}">TASK NAME</td>
+        </tr>
+        <tr>
+            <td>Task Description: </td>
+            <td th:text="${task.description}">TASK DESCRIPTION</td>
+        </tr>
+        <tr>
+            <td>User: </td>
+            <td th:text= "${user.firstName} + ' ' + ${user.lastName}">No assigned user</td>
+        </tr>
+        <tr>
+            <td>Comments: </td>
+        </tr>
+        <tr th:each="comm : ${comments}">
+             <td th:text="${comm.comment}"></td>
+        </tr>
+    </table>
+    <h2><a th:href="@{'/task/addComment/' + ${task.id}}">Add a comment</a></h2>
+    <h2><a href="/users/sharedProjects">Shared Projects</a></h2>
+</body>
+</html>

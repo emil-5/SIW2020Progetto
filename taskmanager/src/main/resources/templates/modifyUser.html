@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>TaskManager</title>
+</head>
+
+<body>
+<h1>Modify user info</h1>
+<form id = "modifyUser"
+      th:action="@{/users/modifyUser}"
+      method="POST">
+
+    <table>
+        <tr>
+            <td><label for="firstNameInput">New First name</label>
+            <td><input id=firstNameInput type="text" th:field="${newuser.firstName}" placeholder="NAME" value = "${user.firstName}" required/></td>
+            <td th:if="${#fields.hasErrors('newuser.firstName')}" th:errors="${newuser.firstName}" th:style="'color:red'"></td>
+        </tr>
+        <tr>
+            <td><label for="lastNameInput">New Last name</label></td>
+            <td><input id="LastNameInput" type="text" th:field="${newuser.lastName}" value="${user.lastName}" placeholder="DESCRIPTION"/></td>
+            <td th:if="${#fields.hasErrors('newuser.lastName')}" th:errors="${newuser.lastName}" th:style="'color:red'"></td>
+        </tr>
+        <tr>
+        <tr>
+            <td><label for="passwordInput">New Password</label></td>
+            <td><input id="passwordInput" type="text" th:field="${newcredentials.password}" placeholder="DESCRIPTION"/></td>
+            <td th:if="${#fields.hasErrors('newcredentials.password')}" th:errors="${newcredentials.password}" th:style="'color:red'"></td>
+        </tr>
+                <tr>
+            <td><label for="userNameInput">New Username</label></td>
+            <td><input id="userNameInput" type="text" th:field="${newcredentials.userName}" value="${credentials.userName}" placeholder="DESCRIPTION"/></td>
+            <td th:if="${#fields.hasErrors('newcredentials.userName')}" th:errors="${newcredentials.userName}" th:style="'color:red'"></td>
+        </tr>
+        <tr>
+            <td><button type="submit">Confirm</button></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

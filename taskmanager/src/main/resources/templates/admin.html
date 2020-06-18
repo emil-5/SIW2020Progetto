@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>TaskManager</title>
+</head>
+<body>
+<h1 th:text="'Welcome, Master ' + ${user.firstName} + '!'"></h1>
+<h4><a href="/admin/viewAllUsersAdmin">View all users</a></h4>
+<h4><a href="/admin/searchByUsername">View a user by Username</a></h4>
+<h4><a href="/home">Home as a user</a></h4>
+<h4><a href="/logout">Logout</a></h4>
+
+</body>
+</html>

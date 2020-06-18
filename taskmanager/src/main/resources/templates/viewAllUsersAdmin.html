@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>TaskManager</title>
+</head>
+<body>
+<h1>List of users</h1>
+	<div>
+		<ul>
+			<li th:each="user : ${users}">
+				<a href="userProfileAdmin.html" 
+				   th:href="@{'/admin/userProfileAdmin/' + ${user.id}}" 
+				   th:text="|${user.firstName} ${user.lastName}|">USER</a>
+			</li>
+		</ul>
+	</div>
+<h2><a th:href="@{/admin}">Home</a></h2>
+</body>
+</html>
