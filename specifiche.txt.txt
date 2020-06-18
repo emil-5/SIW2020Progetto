@@ -1,0 +1,158 @@
+Casi d’uso per User e Admin
+
+SEZIONE USER
+Caso d'uso "SignUp":
+-l'utente che accede per la prima volta alla piattaforma utilizza il modulo di registrazione per registrarsi inserendo: username, password, nome e cognome
+-il sistema verifica che le informazioni inserite rispettino i parametri stabiliti per ogni campo e che lo username sia univoco
+-il sistema assegna al nuovo utente un identificatore univoco e lo salva nella base di dati
+-il sistema chiede all'utente di accedere
+
+Caso d'uso "Login":
+-l'utente già registrato alla piattaforma utilizza il modulo di login per accedere alla propria pagina
+-l'utente inserisce il proprio username e la password
+-il sistema lo identifica e visualizza l'homepage dell'utente
+
+Caso d'uso "Visualizza Profilo":
+-l'utente autenticato dalla propria home seleziona "profilo"
+-il sistema mostra username, nome, cognome e ruolo dell'utente
+
+Caso d'uso "Modifica Profilo":
+-l'utente autenticato dal proprio profilo sceglie l’attività "modifica"
+-il sistema mostra una pagina dove inserire i nuovi dati
+-l'utente inserisce nome, cognome e password
+-l'utente conferma
+-il sistema aggiorna i dati dell'utente nella memoria
+
+
+SEZIONE ADMIN
+Caso d’uso “Cancellazione Utente”
+-l’admin autenticato sceglie l’operazione di “cancellazione utente”
+-l’admin autenticato con il login può selezionare e visualizzare tutti gli utenti
+-il sistema cancella l’utente selezionato dall’admin
+-dopodichè il sistema mostra gli utenti rimanenti
+
+Caso d’uso “Cancellazione Progetto”
+-l’admin autenticato sceglie l’operazione di “cancellazione progetto”
+-l’admin autenticato con il login può selezionare e visualizzare tutti i progetti di un utente
+-il sistema cancella il progetto selezionato dall’admin
+-dopodichè il sistema mostra i progetti rimanenti
+
+
+
+
+
+Casi d’uso Progetto
+
+Caso d’uso “Creazione Progetto”:
+-l’utente autenticato sceglie l’attività “crea progetto”
+-il sistema mostra la schermata dove inserire i dati relativi al progetto
+-l’utente inserisce nome, descrizione del progetto
+-l’utente conferma i dati inseriti
+-il sistema verifica la correttezza dei dati inseriti
+-il sistema salva il progetto nel database
+*-il sistema mostra all’utente che la creazione è avvenuta correttamente
+
+Caso d’uso “Visualizzazione Progetti”
+-l’utente autenticato sceglie l’attività “i miei progetti”
+-il sistema mostra l’elenco dei progetti creati dall’utente
+
+Caso d’uso “Visualizzazione Progetti Condivisi”
+-l’utente autenticato sceglie l’attività “progetti condivisi con me”
+-il sistema mostra l’elenco dei progetti condivisi con l’utente
+
+Caso d’uso “Modifica Progetto”
+-l'utente autenticato dalla pagina di un proprio progetto sceglie l’attività "modifica progetto"
+-il sistema mostra una pagina dove inserire i nuovi dati
+-l'utente inserisce nome, descrizione
+-l'utente conferma
+-il sistema aggiorna i dati del progetto nella memoria
+
+Caso d’uso “Condivisione Progetto”
+-l’utente autenticato dalla pagina di un proprio progetto sceglie l’attività “condividi progetto”
+-il sistema mostra una pagina dove inserire lo username dell’utente con cui condividere il progetto
+-l’utente autenticato inserisce lo username del nuovo membro
+-il sistema verifica la correttezza dei dati
+-il sistema aggiorna le informazioni relative al progetto
+
+Caso d’uso “Cancellazione Progetto”
+-l’utente autenticato sceglie l’operazione di “cancellazione progetto” dalla pagina di un proprio progetto
+-il sistema cancella il progetto selezionato dall’utente
+-dopodichè il sistema mostra i progetti rimanenti
+
+
+
+
+
+
+
+Casi d’uso Task
+
+Caso d’uso “Creazione Task”
+-l’utente autenticato sceglie l’operazione “crea task” dalla pagina di un proprio progetto
+-il sistema mostra una pagina dove inserire i dati del task in creazione
+-l’utente inserisce nome e descrizione del task
+-l’utente conferma l’inserimento
+-il sistema verifica la correttezza dei dati inseriti
+-il sistema salva in memoria il nuovo task relativo al progetto
+
+Caso d’uso “Modifica Task”
+-l'utente autenticato sceglie l’attività "modifica task"
+-il sistema mostra una pagina dove inserire i nuovi dati
+-l'utente inserisce nome, descrizione
+-l'utente conferma
+-il sistema aggiorna i dati del task nella memoria
+
+Caso d’uso “Cancellazione Task”
+-l’utente autenticato sceglie l’operazione di “cancellazione task”
+-il sistema cancella il task selezionato dall’utente
+
+Caso d’uso “Assegnazione di un Task ad un Utente”
+-l’utente autenticato sceglie l’operazione “assegna task ad un utente”
+-il sistema mostra un modulo dove inserire lo username
+-l’utente inserisce lo username di un membro del progetto
+-il sistema verifica la correttezza dei dati
+-il sistema aggiorna i dati del task in memoria
+
+Caso d’uso “Visualizza Task”
+-l’utente autenticato selezione un task tra quelli presenti in un progetto
+-il sistema mostra i dati relativi al task selezionato
+
+
+
+
+
+
+
+Casi d’uso Tag
+
+Caso d’uso “Aggiunta Tag al progetto”
+-l’utente autenticato sceglie l’attività “aggiungi tag” dalla pagina di un task
+-il sistema mostra una pagina con un modello in cui inserire il nuovo task
+-l’utente inserisce nome e descrizione del tag
+-l’utente conferma l’inserimento
+-il sistema verifica la correttezza dei dati inseriti
+-il sistema salva il tag inserito nel database
+
+Caso d’uso “Visualizzazione Tag”
+-l’utente autenticato sceglie l’attività “visualizza tags” dalla pagina di un task
+-il sistema mostra una pagina contenente le informazioni dei tag appartenenti ad un task
+
+
+
+
+
+
+
+
+Casi d’uso Commento
+
+Caso d’uso “Creazione Commento
+-l’utente autenticato sceglie l’attività “aggiungi commento” dalla di un task
+-il sistema mostra una pagina con un modello in cui inserire il commento
+-l’utente inserisce il testo del commento
+-l’utente conferma l’inserimento
+-il sistema verifica la correttezza del testo inserito
+-il sistema salva il commento inserito nel database
+
+
+
